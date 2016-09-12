@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="package" version="1.0.0">
+    <name>Bablic Localization</name>
+    <packagename>bablic</packagename>
+    <author>Ishai Jaffe</author>
+    <creationDate>April 2014</creationDate>
+    <copyright>Copyright (C) 2012 Bablic. All rights reserved.</copyright>
+    <license>http://www.gnu.org/licenses/gpl-2.0.html GNU/GPL</license>
+    <packager>ishai@bablic.com</packager>
+    <url>https://www.bablic.com/</url>
+    <packagerurl>https://www.bablic.com/</packagerurl>
+    <version>1.0.0</version>
+    <description>This package puts Bablic snippet code in your site, a fully automated localization engine, with translation memory system, and professional translators integration.</description>
+    <files folder="packages">
+        <file type="component" id="bablic" >com_bablic.zip</file>
+        <file type="plugin" id="bablic" group="system">plg_bablic.zip</file>
+    </files>
+</extension>
