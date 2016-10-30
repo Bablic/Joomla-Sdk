@@ -10,8 +10,17 @@
     <version>1.0.0</version>
     <description>This plugin puts Bablic snippet code in your site, a fully automated localization engine, with translation memory system, and professional translators integration.</description>
     <administration>
+        <menu link='index.php?option=com_bablic'>Bablic</menu>
+        <files folder="admin">
+            <filename>index.html</filename>
+            <filename>bablic.php</filename>
+        </files>
         <files>
             <folder>models</folder>
         </files>
     </administration>
+    <files folder="site">
+        <filename>index.html</filename>
+        <filename>bablic.php</filename>
+    </files>
 </extension>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="library" method="upgrade" version="1.7.0">
+	<name>Bablic</name>
+	<libraryname>bablic</libraryname>
+	<author>Ishai Jaffe</author>
+	<creationDate>October 2016</creationDate>
+    <copyright>Copyright (C) 2012 Bablic. All rights reserved.</copyright>
+    <license>http://www.gnu.org/licenses/gpl-2.0.html GNU/GPL</license>
+    <author>ishai@bablic.com</author>
+    <url>https://www.bablic.com/</url>
+	<version>1.0</version>
+	<description>Bablic SDK</description>
+	<files>
+		<file>sdk.php</file>
+		<file>store.php</file>
+	</files>
+</extension>

@@ -2,24 +2,17 @@
 <extension type="plugin" version="1.0.0" group="system">
 	<name>Bablic Localization</name>
 	<author>Ishai Jaffe</author>
-	<creationDate>April 2014</creationDate>
+	<creationDate>April 2016</creationDate>
 	<copyright>Copyright (C) 2012 Bablic. All rights reserved.</copyright>
 	<license>http://www.gnu.org/licenses/gpl-2.0.html GNU/GPL</license>
 	<authorEmail>ishai@bablic.com</authorEmail>
 	<authorUrl>https://www.bablic.com/</authorUrl>
-	<version>1.0.0</version>
-	<description>This plugin puts Bablic snippet code in your site, a fully automated localization engine, with translation memory system, and professional translators integration.</description>
+	<version>1.0.1</version>
+	<description>Bablic helps you translate your Joomla website with ease and style.</description>
 	<files>
 		<filename plugin="bablic">bablic.php</filename>
 	</files>
 	<params>
-		<param name="bablic_id" type="text" default="" label="Bablic Site ID" description="This is the id you get from 'www.bablic.com' after registering your site" />
+		<param name="site" type="text" default="" label="Bablic Site ID" description="This is the id you get from 'www.bablic.com' after registering your site" />
 	</params>
-	<config>
-		<fields name="params">
-			<fieldset name="basic" addfieldpath="/administrator/components/com_bablic/models/fields">
-				<field name="bablic_id" type="Site" default="" label="Bablic Site ID" description="This is the id you get from 'www.bablic.com' after registering your site" />
-			</fieldset>
-		</fields>
-	</config>
 </extension>
