@@ -4,13 +4,9 @@ defined( '_JEXEC' ) or die( 'Restricted access' );
 
 jimport('bablic.sdk');
 jimport('bablic.store');
+jimport('joomla.application.component.helper');
 
-jimport( 'joomla.Platform');
-
-JPluginHelper::importPlugin('bablic');
-
-$plugin = JPluginHelper::getPlugin('system', 'bablic');
-$params = new JRegistry($plugin->params);
+$params = JComponentHelper::getParams('com_bablic');
 $options = array("channel_id" => "joomla","store" => new BablicJoomlaPluginStore($params));
 $sdk = new BablicSDK($options);
 
@@ -53,14 +49,11 @@ $site = $sdk->get_site();
 
 ?>
 <div id="bablicHide" style="position:fixed;z-index:9999999;top:0;left:0;right:0;bottom:0;background:white;"></div>
-<script>(function(){ 
-	var link = document.createElement("LINK"); link.rel="stylesheet"; link.href="//dev.bablic.com/css/addons/generic.css";
-	document.getElementsByTagName("head")[0].appendChild(link); 
-	var link = document.createElement("LINK"); link.rel="stylesheet"; link.href="//dev.bablic.com/css/addons/joomla.css";
+<script>(function(){
+	var link = document.createElement("LINK"); link.rel="stylesheet"; link.href="//cdn2.bablic.com/addons/joomla.css";
 	document.getElementsByTagName("head")[0].appendChild(link); 
  })();</script>
-<script src="http://dev.bablic.com/js/sdk.js"></script>
-<script src="http://dev.bablic.com/js/addons/joomla.js"></script>
+<script src="//cdn2.bablic.com/addons/joomla.js"></script>
 <div style="display:none;">
     <input type="hidden" value="<?php echo $site['site_id'] ?>" id="bablic_site_id" />
     <input type="hidden" value="<?php echo $site['access_token'] ?>" id="bablic_access_token" />

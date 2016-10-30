@@ -12,7 +12,4 @@
 	<files>
 		<filename plugin="bablic">bablic.php</filename>
 	</files>
-	<params>
-		<param name="site" type="text" default="" label="Bablic Site ID" description="This is the id you get from 'www.bablic.com' after registering your site" />
-	</params>
 </extension>

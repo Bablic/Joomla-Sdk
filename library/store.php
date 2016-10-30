@@ -23,7 +23,7 @@ class BablicJoomlaPluginStore{
 
 	function getPlgId(){
 		$db = JFactory::getDBO();
-		$sql = 'SELECT `extension_id` FROM `#__extensions` WHERE `type` = "plugin" AND `element` = "bablic"'; // check the #__extensions table if you don't know your element / folder
+		$sql = 'SELECT `extension_id` FROM `#__extensions` WHERE `element` = "com_bablic"'; // check the #__extensions table if you don't know your element / folder
 		$db->setQuery($sql);
 		if( !($plg = $db->loadObject()) ){
 			return false;

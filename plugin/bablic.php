@@ -18,6 +18,8 @@ jimport( 'joomla.html.parameter');
 jimport('bablic.sdk');
 jimport('bablic.store');
 
+jimport('joomla.application.component.helper');
+
 
 
 class plgSystemBablic extends JPlugin
@@ -30,7 +32,8 @@ class plgSystemBablic extends JPlugin
             if($mainframe->isAdmin() || strpos($_SERVER["PHP_SELF"], "index.php") === false || strcmp(substr(JURI::base(), -15), "/administrator/")==0)
                 return;
 
-			$this->sdk = new BablicSDK(array("channel_id" => "joomla", "store" => new BablicJoomlaPluginStore($this->params)));
+            $params = JComponentHelper::getParams('com_bablic');
+			$this->sdk = new BablicSDK(array("channel_id" => "joomla", "store" => new BablicJoomlaPluginStore($params)));
 			$this->sdk->handle_request();
     	}
 		
