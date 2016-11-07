@@ -10,10 +10,10 @@ $params = JComponentHelper::getParams('com_bablic');
 $options = array("channel_id" => "joomla","store" => new BablicJoomlaPluginStore($params));
 $sdk = new BablicSDK($options);
 
-if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+if ($_SERVER['REQUEST_METHOD'] === 'POST' || $_GET['backward'] == 'true') {
 	header('Content-type: application/json');
 	$url = JURI::root();
-	switch($_POST['action']){
+	switch($_REQUEST['action']){
 		case 'create':
 			$rslt = $sdk->create_site(
 				array(
@@ -27,7 +27,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 			}
 			break;
 		case 'set':
-			$site = $_POST['site'];
+			$site = $_REQUEST['site'];
 			$sdk->set_site($site,"$url?option=com_bablic&format=raw");
 			break;
 		case 'refresh':
