@@ -32,8 +32,11 @@ class plgSystemBablic extends JPlugin
             if($mainframe->isAdmin() || strpos($_SERVER["PHP_SELF"], "index.php") === false || strcmp(substr(JURI::base(), -15), "/administrator/")==0)
                 return;
 
+            $url = JURI::root();
+            $path = parse_url($url, PHP_URL_PATH);
+            $subdir_base = preg_replace("/\/$/", "", $path);
             $params = JComponentHelper::getParams('com_bablic');
-			$this->sdk = new BablicSDK(array("channel_id" => "joomla", "store" => new BablicJoomlaPluginStore($params)));
+			$this->sdk = new BablicSDK(array("channel_id" => "joomla", "store" => new BablicJoomlaPluginStore($params), "subdir_base" => $subdir_base));
 			$this->sdk->handle_request();
     	}
 		

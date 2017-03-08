@@ -7,7 +7,11 @@ jimport('bablic.store');
 jimport('joomla.application.component.helper');
 
 $params = JComponentHelper::getParams('com_bablic');
-$options = array("channel_id" => "joomla","store" => new BablicJoomlaPluginStore($params));
+
+$url = JURI::root();
+$path = parse_url($url, PHP_URL_PATH);
+$subdir_base = preg_replace("/\/$/", "", $path);
+$options = array("channel_id" => "joomla","store" => new BablicJoomlaPluginStore($params),'subdir_base' => $subdir_base);
 $sdk = new BablicSDK($options);
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST' || $_GET['backward'] == 'true') {
