@@ -4,13 +4,12 @@ defined( '_JEXEC' ) or die( 'Restricted access' );
 
 jimport('bablic.sdk');
 jimport('bablic.store');
+jimport('joomla.application.component.helper');
 
 jimport( 'joomla.Platform');
 
-JPluginHelper::importPlugin('bablic');
+$params = JComponentHelper::getParams('com_bablic');
 
-$plugin = JPluginHelper::getPlugin('system', 'bablic');
-$params = new JRegistry($plugin->params);
 $url = JURI::root();
 $path = parse_url($url, PHP_URL_PATH);
 $subdir_base = preg_replace("/\/$/", "", $path);
